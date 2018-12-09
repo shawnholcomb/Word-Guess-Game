@@ -5,30 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Beach Life Hangman Game</title>
+    <title>Summer Nights Hangman Game</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
     <link href="https://fonts.googleapis.com/css?family=Black+And+White+Picture" rel="stylesheet">
+    <link href="assets/images/favicon.ico" rel="icon" type="image/x-icon">
 </head>
 
 <body>
     <header>
-        <img class="header-image" src="assets/images/headerimage.jpg" alt="Beach Header">
+        <picture>
+            <source srcset="assets/images/headerimage-small.jpg" media="(max-width: 640px)">
+            <img class="header-image" srcset="assets/images/headerimage.jpg" alt="Summer Nights Hangman Game Header">
+        </picture>
     </header>
     <main class="container">
-        <div class="column-left">
-            <h2>This is where a picture and stuff will go</h2>
-        </div>
-        <div class="column-right">
-            <p id="start">Press any key to get started!</p>
-            <p>Wins: <span id="wins">_</span></p>
-            <p id="word">_</p>
-            <p>Number of Guesses Remaining</p>
-            <p id="guesses-remaining">_</p>
-            <p>Letters Already Guessed</p>
-            <p id="letters-guessed">_</p>
-        </div>
+            <div class="aside column-left">
+                <img class="fill-image" src="assets/images/Van.jpg">
+                <h3 class="fill-text">"Got my toes in the water, ass in the sand. Not a worry in the world, a cold beer
+                    in
+                    my hand. Life is good today, life is good today" <br>- Zac Brown Band</h2>
+            </div>
+            <div class="aside column-right">
+                <h1>Press any key to get started!</h1>
+                <h2>Wins: <span id="wins">_</span></h2>
+                <h2 id="word">_</p>
+                    <h2>Number of Guesses Remaining</h2>
+                    <h2 id="guesses-remaining">_</h2>
+                    <h2>Letters Already Guessed</h2>
+                    <h2 id="letters-guessed">_</h2>
+            </div>
     </main>
 
     <script src="assets/javascript/game.js"></script>

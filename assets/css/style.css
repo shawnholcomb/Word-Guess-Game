@@ -13,6 +13,21 @@ header {
     width: 100%;
 }
 
+h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 26px; 
+    margin-bottom: 30px;
+}
+
 .header-image {
     width: 100%;
     height: auto;
@@ -22,6 +37,8 @@ header {
 .container {
     max-width: 960px;
     margin: 0 auto;
+    display: flex;
+
 }
 
 .column-left,
@@ -29,21 +46,17 @@ header {
     border: 2px solid #FFF1B2; 
     width: 50%;
     min-height: 500px;
-    float: left;
     text-align: center;
     padding: 20px;
 }
 
-p {
-    font-size: 28px; 
-    margin-bottom: 20px;
+.fill-image {
+    border: 1px solid #FFF1B2;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
-#start {
-    font-size: 40px;
-}
-
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 961px) {
     .container {
         position: relative;
         bottom: 256px; 
@@ -53,5 +66,17 @@ p {
     .column-right {
         background: #A62005;
     }
+}
 
+@media screen and (max-width: 640px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+    
+    .column-left,
+    .column-right {
+        margin: 0 auto;
+        width: 80%;
+        min-height: auto;
+    }
 }
