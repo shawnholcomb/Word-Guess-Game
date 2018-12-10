@@ -4,8 +4,8 @@
 }
 
 body {
-    background: #A62005;
-    color: #FF9400;
+    background: #a32100;
+    color: #fff1b2;
     font-family: 'Black And White Picture', sans-serif;
 }
 
@@ -25,12 +25,11 @@ h3 {
 
 h2 {
     font-size: 26px; 
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .header-image {
     width: 100%;
-    height: auto;
     margin: 0 auto;
 }
 
@@ -43,29 +42,22 @@ h2 {
 
 .column-left,
 .column-right {
-    border: 2px solid #FFF1B2; 
+    border: 2px solid #ff9400; 
     width: 50%;
     min-height: 500px;
     text-align: center;
     padding: 20px;
 }
 
-.fill-image {
-    border: 1px solid #FFF1B2;
+#fill-image {
+    border: 1px solid #ff9400;
     width: 100%;
     margin-bottom: 10px;
 }
 
-@media screen and (min-width: 961px) {
-    .container {
-        position: relative;
-        bottom: 256px; 
-    }
-
-    .column-left,
-    .column-right {
-        background: #A62005;
-    }
+#wins {
+    font-size: 32px;
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 640px) {

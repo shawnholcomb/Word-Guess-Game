@@ -1,44 +1,88 @@
 //Potential words for the Beach Life Hangman game
-var wordChoice = ["bonfire", "sunset", "boardwalk"];
+var words = ["bonfire", "sunset", "boardwalk", "surf", "fish"];
+var underScore = [];
 var wins = 0;
 var guessesRemaining = 6;
-var indexOfCurrentWord;
-var currentWord = [];
-var guessedLetters = [];
+var rightWord = [];
+var wrongWord = [];
+var bonSound = new Audio('assets/audio/boardwalk.mp3');
 
+//random word is selected
 
-//user presses a key, random word from wordChoice array is selected and displayed on screen as blanks, number of choices is reset to 7, image in left column is reset
-function startGame () {
-    
-    document.onKeyUp = function (event) {
-        var userPress = event.key;   
-        guessesRemaining = 6;
-        console.log(userPress);
+var currentWord = words[Math.floor(Math.random() * words.length)];
+
+console.log(currentWord);
+
+//current word is displayed on screen as blanks
+
+var currentWordUnderscore = () => {
+    for (var i = 0; i < currentWord.length; i++) {
+        underScore.push('-');
     }
+    return underScore;
+}
+console.log(currentWordUnderscore());    
 
+//user picks a letter 
 
+document.addEventListener('keypress', (event) => {
+
+//determine if letter is in word
+
+if(currentWord.indexOf(event.key) > -1) {
+
+//if in currentWord
+    
+    rightWord.push(event.key); 
+    underScore[currentWord.indexOf(event.key)] = event.key;
+
+    if(underScore.join('') == currentWord) {
+
+//need to push to DOM here for winning game
+
+        wins = wins + 1;
+
+        document.getElementById("you-win").innerHTML = "<h3 style='font-size: 52px;'>YOU WIN!</h3>";
+
+        if(currentWord == "sunset") {
+            document.getElementById('fill-image').src = "assets/images/sunset.jpg";
+            document.getElementById('fill-text').innerHTML = "Santa Monica, CA is known as one of the best spots in the world to watch the sunset. Over 6 million people visit the Santa Monica Pier each year where the sunset can be viewed from 130 feet in the air atop the Pacific Ferris Wheel.";
+        } 
+        else if (currentWord == "bonfire") {
+            document.getElementById('fill-image').src = "assets/images/bonfire.jpg";
+            document.getElementById('fill-text').innerHTML = "There are only 38 beaches in California that still allow bonfires.  A favorite past-time for many when the sun sets and the temperatures drop, a beach bonfire is second to none.";
+            bonSound.play();
+        }
+        else if (currentWord == "boardwalk") {
+            document.getElementById('fill-image').src = "assets/images/boardwalk.jpeg";
+            document.getElementById('fill-text').innerHTML = "The Santa Cruz Boardwalk overlooks Montery Bay and is home to the oldest amusement park in California. It features more than 40 rides and attractions, 31 restaurants and an 18-hol mini-golf course.";
+        };
+    }
+    
+} else {
+
+//if not in currentWord
+    
+    wrongWord.push(event.key);
+    guessesRemaining = guessesRemaining - 1;
+
+//if guessesRemaining = 0 the user loses
+
+    if(guessesRemaining == 0) {
+
+// //need to push to DOM for losing game
+
+        document.getElementById('fill-image').src = "assets/images/sadbeach.jpg";
+        document.getElementById('fill-text').innerHTML = "<h3 style='font-size:46px; margin-top: 10px;'>Sorry You Lose!<br>Try Again</h3>";
+    }
 }
 
+document.getElementById("current-word").innerHTML = underScore.join(' ');
+document.getElementById("guesses-remaining").innerHTML = guessesRemaining;
+document.getElementById("letters-guessed").innerHTML = wrongWord.join(', ');
+document.getElementById("wins").innerHTML = 'Wins: ' + wins;
 
 
-// var wordToGuess = wordChoice[Math.floor(Math.randon()*wordChoice.length)];
+console.log(underScore, wrongWord, guessesRemaining)
 
-//user picks as letter 
-
-
-
-//if letter is in word, letter is revealed, if letter is not in word it is added to the letters already guessed and # of guess is reduced by one
-
-// var guesseRemainingElement = document.getElementById("wins");
-// guesseRemainingElement = guessesRemaining;
-
-
-
-//if # of guess left = 0, "You Lose, try again" and restart
-
-
-
-
-//if all letters are revealed "You win" and new image with info blurb is displayed in left column and restart
-
-
+});
