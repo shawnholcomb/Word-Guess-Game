@@ -1,13 +1,16 @@
 //Potential words for the Beach Life Hangman game
-var words = ["bonfire", "sunset", "boardwalk", "surf", "fish"];
+var words = ["bonfire"]; // "sunset", "boardwalk", "surf", "fish"
 var underScore = [];
 var wins = 0;
 var guessesRemaining = 6;
 var rightWord = [];
 var wrongWord = [];
+var newGame = true;
 var bonSound = new Audio('assets/audio/boardwalk.mp3');
 
 //random word is selected
+
+if (newGame) {
 
 var currentWord = words[Math.floor(Math.random() * words.length)];
 
@@ -26,6 +29,8 @@ console.log(currentWordUnderscore());
 //user picks a letter 
 
 document.addEventListener('keypress', (event) => {
+    
+    newGame = false;
 
 //determine if letter is in word
 
@@ -41,6 +46,8 @@ if(currentWord.indexOf(event.key) > -1) {
 //need to push to DOM here for winning game
 
         wins = wins + 1;
+        
+        newGame = true;
 
         document.getElementById("you-win").innerHTML = "<h3 style='font-size: 52px;'>YOU WIN!</h3>";
 
@@ -71,10 +78,13 @@ if(currentWord.indexOf(event.key) > -1) {
     if(guessesRemaining == 0) {
 
 // //need to push to DOM for losing game
+        
+        newGame = true;
 
         document.getElementById('fill-image').src = "assets/images/sadbeach.jpg";
         document.getElementById('fill-text').innerHTML = "<h3 style='font-size:46px; margin-top: 10px;'>Sorry You Lose!<br>Try Again</h3>";
     }
+}
 }
 
 document.getElementById("current-word").innerHTML = underScore.join(' ');
