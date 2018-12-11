@@ -4,8 +4,8 @@
 }
 
 body {
-    background: #a32100;
-    color: #fff1b2;
+    background: #488E98;
+    color: #fff;
     font-family: 'Black And White Picture', sans-serif;
 }
 
@@ -42,15 +42,18 @@ h2 {
 
 .column-left,
 .column-right {
-    border: 2px solid #ff9400; 
+    border: 2px solid #fff; 
+    background: #ff1104;
+    opacity: 0.8;
     width: 50%;
     min-height: 500px;
     text-align: center;
     padding: 20px;
+    margin-bottom: 30px;
 }
 
 #fill-image {
-    border: 1px solid #ff9400;
+    border: 1px solid #fff;
     width: 100%;
     margin-bottom: 10px;
 }
