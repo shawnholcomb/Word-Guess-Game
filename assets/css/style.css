@@ -58,6 +58,10 @@ h2 {
     margin-bottom: 10px;
 }
 
+#fill-text {
+    line-height: 150%;
+}
+
 #wins,
 #losses {
     font-size: 32px;
@@ -65,7 +69,7 @@ h2 {
 }
 
 #you-win {
-    font-size: 52px;
+    font-size: 42px;
 }
 
 @media screen and (max-width: 640px) {
