@@ -107,14 +107,12 @@ document.onkeyup = function(event) {
 
             //if guessesRemaining = 0 the user loses
 
-<<<<<<< HEAD
             if(guessesRemaining == 0) {
-=======
-            document.getElementById('fill-image').src = "assets/images/shark.jpg";
-            document.getElementById('fill-text').innerHTML = "<h3 style='font-size:46px; margin-top: 10px; line-height: 150%;'>Wipeout!!<br>Try Again</h3>";
-            document.getElementById("you-win").textContent = "";
-            wipeSound.play();
->>>>>>> 08edb41e30bd008a0fa437a1b649e4c36c6c3d4b
+
+                document.getElementById('fill-image').src = "assets/images/shark.jpg";
+                document.getElementById('fill-text').innerHTML = "<h3 style='font-size:46px; margin-top: 10px; line-height: 150%;'>Wipeout!!<br>Try Again</h3>";
+                document.getElementById("you-win").textContent = "";
+                wipeSound.play();
 
                 losses = losses + 1;
 
