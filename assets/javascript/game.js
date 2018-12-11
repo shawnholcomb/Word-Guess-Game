@@ -21,7 +21,6 @@ function startGame() {
     rightWord = [];
     underScore = [];
     guessesRemaining = 9;
-    document.getElementById("you-win").innerHTML = "";
     
     //random word is selected
 
@@ -57,7 +56,7 @@ document.onkeyup = function(event) {
 
             wins = wins + 1;
 
-            document.getElementById("you-win").innerHTML = "<h3 style='font-size: 52px;'>COWABUNGA DUDE!</h3>";
+            document.getElementById("you-win").textContent = "COWABUNGA DUDE!";
             cowSound.play();
 
             if(currentWord == "surfboard") {
@@ -99,6 +98,7 @@ document.onkeyup = function(event) {
 
             document.getElementById('fill-image').src = "assets/images/shark.jpg";
             document.getElementById('fill-text').innerHTML = "<h3 style='font-size:46px; margin-top: 10px;'>Wipeout!!<br>Try Again</h3>";
+            document.getElementById("you-win").textContent = "";
             wipeSound.play();
 
             startGame();
