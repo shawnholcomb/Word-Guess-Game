@@ -7,3 +7,4 @@ This is a surfing-themed hangman game titled 'Hang 10 Man!'.  It was built using
 - break
 - barney
 - quiver
+- hangten
