@@ -97,7 +97,7 @@ document.onkeyup = function(event) {
             losses = losses + 1;
 
             document.getElementById('fill-image').src = "assets/images/shark.jpg";
-            document.getElementById('fill-text').innerHTML = "<h3 style='font-size:46px; margin-top: 10px;'>Wipeout!!<br>Try Again</h3>";
+            document.getElementById('fill-text').innerHTML = "<h3 style='font-size:46px; margin-top: 10px; line-height: 150%;'>Wipeout!!<br>Try Again</h3>";
             document.getElementById("you-win").textContent = "";
             wipeSound.play();
 
