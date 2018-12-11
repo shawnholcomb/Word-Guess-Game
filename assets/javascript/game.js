@@ -1,5 +1,5 @@
 //Global variables
-var words = ["surfboard", "wipeout", "barney", "quiver", "break"]; 
+var words = ["surfboard", "wipeout", "barney", "quiver", "break", "hangten"]; 
 var currentWord
 var underScore = [];
 var wins = 0;
@@ -78,6 +78,11 @@ document.onkeyup = function(event) {
             else if (currentWord == "break") {
                 document.getElementById('fill-image').src = "assets/images/break.jpeg";
                 document.getElementById('fill-text').innerHTML = "A break occurs when the water swells and 'breaks', turning into waves and white water.";
+            }
+            }
+            else if (currentWord == "hangten") {
+                document.getElementById('fill-image').src = "assets/images/hangten.jpeg";
+                document.getElementById('fill-text').innerHTML = "A Hang Ten is a surfing maneuverin which the surger positions the surfboard in such a way that they can stand and hang all ten toes over the nose of the board.";
             };
 
             startGame();
