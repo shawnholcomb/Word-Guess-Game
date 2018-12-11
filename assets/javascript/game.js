@@ -8,8 +8,8 @@ var guessesRemaining = 9;
 var rightWord = [];
 var wrongWord = [];
 var userGuess;
-var cowSound = new Audio('assets/audio/cowabunga.mp3');
-var wipeSound = new Audio('assets/audio/wipeout.mp3');
+var cowSound = new Audio('../audio/cowabunga.mp3');
+var wipeSound = new Audio('../audio/wipeout.mp3');
 
 //Start game
 
