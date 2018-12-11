@@ -4,7 +4,7 @@
 }
 
 body {
-    background: #488E98;
+    background: url(../images/bg.jpg);
     color: #fff;
     font-family: 'Black And White Picture', sans-serif;
 }
@@ -44,7 +44,7 @@ h2 {
 .column-right {
     border: 2px solid #fff; 
     background: #ff1104;
-    opacity: 0.8;
+    opacity: 0.85;
     width: 50%;
     min-height: 500px;
     text-align: center;
