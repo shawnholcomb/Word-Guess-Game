@@ -65,7 +65,7 @@ document.onkeyup = function(event) {
             } 
             else if (currentWord == "wipeout") {
                 document.getElementById('fill-image').src = "assets/images/wipeout.jpg";
-                document.getElementById('fill-text').innerHTML = "A wipeout is when a surfer falls or is knocked off the board.  While underwater, the power of the wave can shake the surfer around which is called being Rag-dolled.  In fact 113 people died in 2017 while surfing.";
+                document.getElementById('fill-text').innerHTML = "A wipeout is when a surfer falls or is knocked off the board.  While underwater, the power of the wave can shake the surfer around which is called being 'rag-dolled'.  In fact, 113 people died in 2017 while surfing.";
             }
             else if (currentWord == "barney") {
                 document.getElementById('fill-image').src = "assets/images/barney.jpg";
