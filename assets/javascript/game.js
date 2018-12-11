@@ -1,5 +1,5 @@
 //Global variables
-var words = ["surfboard", "wipeout", "barney", "quiver", "break"]; 
+var words = ["surfboard", "wipeout", "barney", "quiver", "break", "hangten"]; 
 var currentWord
 var underScore = [];
 var wins = 0;
@@ -8,8 +8,8 @@ var guessesRemaining = 9;
 var rightWord = [];
 var wrongWord = [];
 var userGuess;
-var cowSound = new Audio('../audio/cowabunga.mp3');
-var wipeSound = new Audio('../audio/wipeout.mp3');
+var cowSound = new Audio('assets/audio/cowabunga.mp3');
+var wipeSound = new Audio('assets/audio/wipeout.mp3');
 
 //Start game
 
@@ -75,6 +75,10 @@ document.onkeyup = function(event) {
                 document.getElementById('fill-image').src = "assets/images/quiver.jpg";
                 document.getElementById('fill-text').innerHTML = "A quiver is a surfer's collection of boards.  Typically consisting of three to six boards a quiver is the surfing equivalent to a golfer's bag of clubs.";
             }
+            else if (currentWord == "hangten") {
+                document.getElementById('fill-image').src = "assets/images/hangten.jpg";
+                document.getElementById('fill-text').innerHTML = "Hang Ten is a surfing manuever in which the surfer positions the board in such a way that they can stand and hang all ten toes over the nose of the board.";
+            }
             else if (currentWord == "break") {
                 document.getElementById('fill-image').src = "assets/images/break.jpeg";
                 document.getElementById('fill-text').innerHTML = "A break occurs when the water swells and 'breaks', turning into waves and white water.";
@@ -88,23 +92,32 @@ document.onkeyup = function(event) {
         //if not in currentWord
         
         wrongWord.push(userGuess);
-        guessesRemaining = guessesRemaining - 1;
 
-        //if guessesRemaining = 0 the user loses
+        // for (var i = 0; i < wrongWord.length; i++) {
+        //     if (wrongWord[i] == userGuess) {
+        //         console.log("this has already been chosen")
+        //         }
+        //         else {
 
-        if(guessesRemaining == 0) {
+            guessesRemaining = guessesRemaining - 1;
 
-            losses = losses + 1;
+            //if guessesRemaining = 0 the user loses
 
-            document.getElementById('fill-image').src = "assets/images/shark.jpg";
-            document.getElementById('fill-text').innerHTML = "<h3 style='font-size:46px; margin-top: 10px;'>Wipeout!!<br>Try Again</h3>";
-            document.getElementById("you-win").textContent = "";
-            wipeSound.play();
+            if(guessesRemaining == 0) {
 
-            startGame();
-        }
-    }
+                losses = losses + 1;
 
+                document.getElementById('fill-image').src = "assets/images/shark.jpg";
+                document.getElementById('fill-text').innerHTML = "<h3 style='font-size:46px; margin-top: 10px; line-height: 150%;'>Wipeout!!<br>Try Again</h3>";
+                document.getElementById("you-win").textContent = "";
+                wipeSound.play();
+
+                startGame();
+                }
+                }
+        // }
+    // }
+    
 document.getElementById("current-word").innerHTML = underScore.join(' ');
 document.getElementById("guesses-remaining").innerHTML = guessesRemaining;
 document.getElementById("letters-guessed").innerHTML = wrongWord.join(', ');
