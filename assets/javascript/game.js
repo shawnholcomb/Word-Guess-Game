@@ -137,5 +137,4 @@ document.onkeyup = function (event) {
 
 };
 
-
 startGame();
